@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'myapp/base.html' %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Result page{% endblock %}</title>
+</head>
+<body>
+    {% block body_block %}
+
+        <p>Hello <b> {{ your_name }} </b> </p><br>
+    {% if booklist %}
+        <li><b>Books under Category:</b> {{ select_a_category }}</li>
+        {% for books in booklist %}
+          <ol start="1">
+            <li> {{ books.title }}</li>
+          </ol>
+        {% endfor %}
+
+    {% else %}
+        <li><b>Books</b></li>
+        {% for books in booklist1 %}
+          <ul>
+            <li> {{ books.title }}</li>
+          </ul>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'myapp/base.html' %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Order Page{% endblock %}</title>
+</head>
+{% block body_block %}
+    {% if books %}
+        <ol>
+        <h3>Books are:</h3>
+        {% for books in books %}
+           <li><b>Title:</b>{{ books.title }}  <b>Price</b>{{ books.price }}</li>
+        {% endfor %}
+        </ol>
+        <b>Total:</b>{{ total }}
+    {% else %}
+        <h3>Books are not available</h3>
+    {% endif %}
+
+{% endblock %}
+</html>

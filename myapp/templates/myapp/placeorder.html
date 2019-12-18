@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'myapp/base.html' %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Place Order Page{% endblock %}</title>
+</head>
+{% block body_block %}
+    <form action= "{% url 'myapp:place_order' %}" method="post">
+        {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" name="Submit" value="Place Order"/>
+    </form>
+
+{% endblock %}
+</html>

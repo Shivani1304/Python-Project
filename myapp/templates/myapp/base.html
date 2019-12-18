@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+        <title>eBook APP - {% block title %}Welcome!{% endblock %}</title>
+    </head>
+
+    <body>
+    <br>
+            <h1>{% block myhdg %} Hello {{request.user.username}} {% endblock %}</h1>
+            {% block body_block %}*** {% endblock %}
+
+        <hr/>
+
+
+    <nav class="nav flex-column">
+        <ul class="nav nav-pills">
+            {% if request.user.username  %}
+
+             <li class="nav-item">
+                <a class="nav-link" href="{% url 'myapp:logout' %}">Logout</a>
+            </li>
+
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'myapp:login' %}">Login</a>
+            </li>
+
+                <li class="nav-item">
+                <a class="nav-link" href="{% url 'myapp:register' %}">Register</a>
+            </li>
+
+        {% endif %}
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'myapp:index' %}">Click here to return to main page</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'myapp:findbooks' %}">Click here to Find Book</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'myapp:place_order' %}">Click here to Place order</a>
+            </li>
+        </ul>
+    </nav>
+
+</body>
+
+        <!--<div class="footer"><li class="hbar1"><a href="{% url 'myapp:login' %}">Login</a> </li><li class="hbar1"><a href="{% url 'myapp:register' %}">Register Here</a>-->
+
+
+           <!-- <div class="jumbotron text-center" style="margin-bottom:0">
+                <ul>
+                    <li class="hbar1"><a href = "{% url 'myapp:index' %}">Click here to return to main page</a></li>
+                    <li class="hbar1"><a href = "{% url 'myapp:findbooks' %}">Click here to Find Books</a></li>
+                    <li class="hbar1"><a href = "{% url 'myapp:place_order' %}">Click here to Place order</a></li>
+            </ul>-->
+
+
+
+
+
+
+</ul>
+</html>

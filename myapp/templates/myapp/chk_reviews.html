@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block myhdg %}Hello {{request.user.username}} {% endblock %}
+{% block body_block %}
+    {% if average_rating %}
+        <h3><a href="{% url 'myapp:detail' book.id %}">{{book.title}}</a></h3>
+        <h3>Average rating {{ average_rating }}</h3>
+    {% else %}
+        <br>
+        <strong>There are no ratings available</strong>
+    {% endif %}
+    <br>
+
+{% endblock %}

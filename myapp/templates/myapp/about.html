@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'myapp/base.html' %}
+    <meta charset="UTF-8">
+   <title> {% block title %} About page {% endblock %} </title>
+</head>
+{% block body_block %}
+<body>
+    <h2 class="aboutbody"><b>This is  an eBook APP</b></h2>
+    <p> Your fav numbr is: {{ mynum }}</p>
+</body>
+{% endblock %}
+</html>

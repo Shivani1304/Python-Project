@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details</title>
+</head>
+<body>
+
+        <h2>Book Detail</h2>
+        <ol>
+
+            <li> <b>Book name is:</b> {{ book.title }} </li>
+            <li> <b>Book price is:</b> {{ book.price }} </li>
+            <li> <b>Publisher of book is:</b> {{ book.publisher.name }} </li>
+
+        </ol>
+
+    <p><a href="{% url 'myapp:index' %}">Index Page</a></p>
+</body>
+</html>

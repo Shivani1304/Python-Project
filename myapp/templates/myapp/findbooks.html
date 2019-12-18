@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'myapp/base.html' %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Search book{% endblock %}</title>
+</head>
+<body> {% block body_block %}
+    <form action="{% url 'myapp:findbooks' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="submit1" value="Find Books" />
+    </form>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    {% extends 'myapp/base.html' %}
+    <title>{% block title %}Login Page{% endblock %}</title>
+</head>
+{% block body_block %}
+
+    <form action= "{% url 'myapp:login' %}" method="POST">
+        {% csrf_token %}
+            {{ form.as_p }}
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Username</span>
+            </div>
+
+            <input  class="form-control" placeholder="Username" aria-label="Username" name="username" required>
+        </div>
+
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">Password</span>
+            </div>
+
+            <input class="form-control" type="password" placeholder="Enter Password" name="password" required>
+            <!--<input type="password"class="form-control" placeholder="Enter Password" aria-label="Password" aria-describedby="basic-addon1" name="passwoed" required>-->
+        </div>
+
+        <input type="submit" class="btn btn-success" value="Login"/>
+
+
+
+    </form>
+{% endblock %}
+</html>

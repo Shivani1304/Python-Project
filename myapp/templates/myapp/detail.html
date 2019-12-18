@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% extends 'myapp/base.html' %}
+    <meta charset="UTF-8">
+    <title> {% block title %}Detail Page {% endblock %}</title>
+</head>
+
+<body>
+{% block body_block %}
+    <h2>Book Detail</h2>
+        <ol>
+
+            <li> <b>Book name is:</b> {{ book.title }} </li>
+            <li> <b>Book price is:</b> {{ book.price }} </li>
+            <li> <b>Publisher of book is:</b> {{ book.publisher.name }} </li>
+
+        </ol>
+{% endblock %}
+</body>
+</html>

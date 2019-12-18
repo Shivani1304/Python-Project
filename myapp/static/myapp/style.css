@@ -1,0 +1,29 @@
+
+.hbar1 {
+    display: inline;
+    margin: 15px;
+
+}
+.jumbotron text-center{
+     height:600px;
+     background: aliceblue;
+}
+
+body{
+    font-family: "Georgia", "Bell MT", "SansSerif";
+    background: antiquewhite;
+    font-size: medium;
+    font-style: normal;
+}
+
+.aboutbody{
+    border-style: groove;
+    text-align: center;
+}
+
+.link:active {
+    color: blue;
+}
+.link:visited{
+        color: red;
+}
